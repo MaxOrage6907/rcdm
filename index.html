@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RC des Mines - Association de Modélisme Tout-Terrain</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#accueil" class="logo"></a>
+            <ul class="nav-links">
+                <li><a href="#accueil" onclick="showSection('accueil')">Accueil</a></li>
+                <li><a href="#a-propos" onclick="showSection('a-propos')">À Propos</a></li>
+                <li><a href="#chronos" onclick="showSection('chronos')">Chronos</a></li>
+                <li><a href="#galerie" onclick="showSection('galerie')">Galerie</a></li>
+                <li><a href="#infos" onclick="showSection('infos')">Infos Pratiques</a></li>
+                <li><a href="#reglement" onclick="showSection('reglement')">Règlement</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Accueil -->
+    <div id="accueil" class="section active">
+        <section id="hero">
+            <div class="hero-content">
+                <h1>RC des Mines</h1>
+                <p>Association de modélisme à Saint Pierre-la-Palud</p>
+                <a href="#a-propos" class="cta-button" onclick="showSection('a-propos')">
+                    <i class="fas fa-car"></i> Découvrir notre club
+                </a>
+            </div>
+        </section>
+
+        <section>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h3>Communauté</h3>
+                    <p>Rejoignez une communauté passionnée de pilotes RC de tous niveaux</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Compétitions</h3>
+                    <p>Participez à nos courses et chronométrages réguliers</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Technique</h3>
+                    <p>Échangez conseils et astuces pour optimiser vos modèles</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- À Propos -->
+    <div id="a-propos" class="section">
+        <section>
+            <h2 class="section-title">À Propos de RC des Mines</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Fondée en 1995, l'association RC des Mines rassemble les passionnés de modélisme tout-terrain de la région. Notre club offre un environnement convivial pour tous les niveaux, du débutant au pilote expérimenté.</p>
+                    
+                    <p>Notre circuit technique propose des défis variés : montées raides, descentes techniques, passages dans l'eau et obstacles naturels. Nous organisons régulièrement des compétitions amicales et des sessions de chronométrage pour mesurer vos progrès.</p>
+                    
+                    <p>L'esprit d'entraide et de partage anime notre communauté. Nos membres expérimentés sont toujours prêts à conseiller les nouveaux arrivants sur le choix du matériel, les réglages ou les techniques de pilotage.</p>
+                </div>
+                <div class="about-image">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Chronos -->
+    <div id="chronos" class="section">
+        <section>
+            <h2 class="section-title">Meilleurs Chronos</h2>
+            <div class="times-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Catégorie</th>
+                            <th>Pilote</th>
+                            <th>Temps</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Crawler 1/10</strong></td>
+                            <td>Jean Dupont</td>
+                            <td>2:45.32</td>
+                            <td>15/05/2024</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trial 1/10</strong></td>
+                            <td>Marie Martin</td>
+                            <td>3:12.18</td>
+                            <td>22/04/2024</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scale 1/8</strong></td>
+                            <td>Pierre Durand</td>
+                            <td>2:58.94</td>
+                            <td>08/06/2024</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Monster Truck</strong></td>
+                            <td>Lucas Bernard</td>
+                            <td>2:33.76</td>
+                            <td>01/06/2024</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rock Bouncer</strong></td>
+                            <td>Sophie Moreau</td>
+                            <td>3:28.45</td>
+                            <td>18/05/2024</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="color: #e5e5e5; text-align: center; margin-top: 1rem;">
+                <i class="fas fa-info-circle"></i> Chronos mis à jour après chaque session officielle
+            </p>
+        </section>
+    </div>
+
+    <!-- Galerie -->
+    <div id="galerie" class="section">
+        <section>
+            <h2 class="section-title">Galerie Photos & Vidéos</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div>
+                        <i class="fas fa-play-circle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <div>Vidéo du Circuit</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div>
+                        <i class="fas fa-images" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <div>Compétition 2024</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div>
+                        <i class="fas fa-camera" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <div>Parcours Technique</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div>
+                        <i class="fas fa-video" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <div>Pilotage Expert</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div>
+                        <i class="fas fa-image" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <div>Meeting Club</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div>
+                        <i class="fas fa-play" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <div>Tutoriel Débutant</div>
+                    </div>
+                </div>
+            </div>
+            <p style="color: #e5e5e5; text-align: center; margin-top: 2rem;">
+                Cliquez sur les éléments pour voir le contenu complet
+            </p>
+        </section>
+    </div>
+
+    <!-- Infos Pratiques -->
+    <div id="infos" class="section">
+        <section>
+            <h2 class="section-title">Informations Pratiques</h2>
+            
+            <div class="info-box">
+                <h3><i class="fas fa-clock"></i> Horaires d'Ouverture</h3>
+                <ul>
+                    <li><strong>Mercredi :</strong> 14h00 - 18h00</li>
+                    <li><strong>Samedi :</strong> 9h00 - 12h00 / 14h00 - 18h00</li>
+                    <li><strong>Dimanche :</strong> 9h00 - 12h00 / 14h00 - 17h00</li>
+                    <li><em>Fermé les jours fériés et en cas de conditions météo défavorables</em></li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3><i class="fas fa-map-marker-alt"></i> Localisation</h3>
+                <p><strong>Circuit RC des Mines</strong><br>
+                Chemin des Anciennes Mines<br>
+                62000 Lens, France</p>
+                <p style="margin-top: 1rem;">
+                    <i class="fas fa-car"></i> Parking gratuit disponible<br>
+                    <i class="fas fa-bus"></i> Accessible en transport en commun (ligne 15)
+                </p>
+            </div>
+
+            <div class="info-box">
+                <h3><i class="fas fa-euro-sign"></i> Tarifs</h3>
+                <ul>
+                    <li><strong>Adhésion annuelle :</strong> 45€</li>
+                    <li><strong>Session découverte :</strong> 10€</li>
+                    <li><strong>Location matériel débutant :</strong> 15€/session</li>
+                    <li><strong>Cours particulier :</strong> 25€/heure</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3><i class="fas fa-phone"></i> Contact</h3>
+                <p>
+                    <i class="fas fa-envelope"></i> <strong>Email :</strong> contact@rcmines.fr<br>
+                    <i class="fas fa-phone"></i> <strong>Téléphone :</strong> 03 21 XX XX XX<br>
+                    <i class="fas fa-user"></i> <strong>Président :</strong> Michel Leblanc
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Règlement -->
+    <div id="reglement" class="section">
+        <section>
+            <h2 class="section-title">Règlement du Club</h2>
+            
+            <div class="info-box">
+                <h3><i class="fas fa-shield-alt"></i> Règles de Sécurité</h3>
+                <ul>
+                    <li>Port obligatoire de chaussures fermées sur le circuit</li>
+                    <li>Interdiction de courir sur la piste pendant les sessions</li>
+                    <li>Vérification obligatoire des batteries avant utilisation</li>
+                    <li>Respect des zones de pilotage délimitées</li>
+                    <li>Signalement immédiat de tout incident ou matériel défaillant</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3><i class="fas fa-cogs"></i> Règles Techniques</h3>
+                <ul>
+                    <li>Modèles 1/8, 1/10 et 1/12 acceptés</li>
+                    <li>Batteries LiPo limitées à 4S maximum</li>
+                    <li>Niveau sonore inférieur à 85dB à 1 mètre</li>
+                    <li>Vérification technique obligatoire pour les nouveaux modèles</li>
+                    <li>Interdiction des modifications dangereuses</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3><i class="fas fa-users"></i> Vie du Club</h3>
+                <ul>
+                    <li>Respect mutuel entre tous les membres</li>
+                    <li>Participation aux travaux d'entretien du circuit</li>
+                    <li>Aide aux nouveaux membres encouragée</li>
+                    <li>Présence obligatoire à l'assemblée générale annuelle</li>
+                    <li>Cotisation à jour pour accéder au circuit</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3><i class="fas fa-gavel"></i> Sanctions</h3>
+                <ul>
+                    <li><strong>1er avertissement :</strong> Rappel à l'ordre verbal</li>
+                    <li><strong>2e avertissement :</strong> Exclusion temporaire (1 mois)</li>
+                    <li><strong>3e avertissement :</strong> Exclusion définitive</li>
+                    <li>En cas de comportement dangereux : exclusion immédiate</li>
+                </ul>
+            </div>
+
+            <p style="color: #dc2626; text-align: center; margin-top: 2rem; font-weight: bold;">
+                <i class="fas fa-exclamation-triangle"></i> 
+                Le non-respect du règlement engage la responsabilité du membre
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 RC des Mines - Association de modélisme tout-terrain</p>
+        <p>Tous droits réservés | Conception web par l'équipe RC des Mines</p>
+        <div class="social-links">
+            <a href="https://www.helloasso.com" target="_blank" class="social-link hello-asso">
+                <i class="fas fa-heart"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" class="social-link facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="social-link instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/33123456789" target="_blank" class="social-link whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Masquer toutes les sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Afficher la section demandée
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            
+            // Scroll vers le haut
+            window.scrollTo(0, 0);
+        }
+
+        // Animation au scroll pour les cartes
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .info-box').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Effet de parallax léger sur le hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('#hero');
+            if (parallax) {
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
