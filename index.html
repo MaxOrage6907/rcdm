@@ -6,6 +6,7 @@
     <title>RC des Mines - Association de Modélisme Tout-Terrain</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
     <header>
@@ -15,22 +16,59 @@
                 <li><a href="#accueil" onclick="showSection('accueil')">Accueil</a></li>
                 <li><a href="#a-propos" onclick="showSection('a-propos')">À Propos</a></li>
                 <li><a href="#chronos" onclick="showSection('chronos')">Chronos</a></li>
-                <li><a href="#galerie" onclick="showSection('galerie')">Galerie</a></li>
                 <li><a href="#infos" onclick="showSection('infos')">Infos Pratiques</a></li>
                 <li><a href="#reglement" onclick="showSection('reglement')">Règlement</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Accueil -->
+        <!-- Accueil -->
     <div id="accueil" class="section active">
         <section id="hero">
+            <!-- Slideshow Background -->
+            <div class="hero-slideshow">
+                <div class="hero-slide active" style="background-image: url('ch.jpg');">
+                </div>
+                <div class="hero-slide" style="background-image: url('voiture.jpg');">
+                </div>
+                <div class="hero-slide" style="background-image: url('cb.jpg');">
+                </div>
+                <div class="hero-slide">
+                    <video autoplay muted loop>
+                        <source src=".mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="hero-slide" style="background-image: url('cb.jpg');">
+                </div>
+            </div>
+            
+            <!-- Overlay -->
+            <div class="hero-overlay"></div>
+            
+            <!-- Navigation du slideshow -->
+            <button class="slideshow-nav prev" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slideshow-nav next" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Contenu principal -->
             <div class="hero-content">
                 <h1>RC des Mines</h1>
-                <p>Association de modélisme à Saint Pierre-la-Palud</p>
+                <p>Circuit de modélisme tout-terrain à Saint Pierre-la-Palud</p>
                 <a href="#a-propos" class="cta-button" onclick="showSection('a-propos')">
-                    <i class="fas fa-car"></i> Découvrir notre club
+                    <i class="fas fa-car"></i> Découvrir le club
                 </a>
+            </div>
+            
+            <!-- Contrôles points -->
+            <div class="slideshow-controls">
+                <div class="slide-dot active" onclick="currentSlide(1)"></div>
+                <div class="slide-dot" onclick="currentSlide(2)"></div>
+                <div class="slide-dot" onclick="currentSlide(3)"></div>
+                <div class="slide-dot" onclick="currentSlide(4)"></div>
+                <div class="slide-dot" onclick="currentSlide(5)"></div>
             </div>
         </section>
 
@@ -59,10 +97,10 @@
     <!-- À Propos -->
     <div id="a-propos" class="section">
         <section>
-            <h2 class="section-title">À Propos de RC des Mines</h2>
+            <h2 class="section-title">À Propos du RC des Mines</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Fondée en 1995, l'association RC des Mines rassemble les passionnés de modélisme tout-terrain de la région. Notre club offre un environnement convivial pour tous les niveaux, du débutant au pilote expérimenté.</p>
+                    <p>Fondée en 2024, l'association RC des Mines rassemble les passionnés de modélisme tout-terrain de la région. Notre club offre un environnement convivial pour tous les niveaux, du débutant au pilote expérimenté.</p>
                     
                     <p>Notre circuit technique propose des défis variés : montées raides, descentes techniques, passages dans l'eau et obstacles naturels. Nous organisons régulièrement des compétitions amicales et des sessions de chronométrage pour mesurer vos progrès.</p>
                     
@@ -124,54 +162,6 @@
             </div>
             <p style="color: #e5e5e5; text-align: center; margin-top: 1rem;">
                 <i class="fas fa-info-circle"></i> Chronos mis à jour après chaque session officielle
-            </p>
-        </section>
-    </div>
-
-    <!-- Galerie -->
-    <div id="galerie" class="section">
-        <section>
-            <h2 class="section-title">Galerie Photos & Vidéos</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div>
-                        <i class="fas fa-play-circle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                        <div>Vidéo du Circuit</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div>
-                        <i class="fas fa-images" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                        <div>Compétition 2024</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div>
-                        <i class="fas fa-camera" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                        <div>Parcours Technique</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div>
-                        <i class="fas fa-video" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                        <div>Pilotage Expert</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div>
-                        <i class="fas fa-image" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                        <div>Meeting Club</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div>
-                        <i class="fas fa-play" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                        <div>Tutoriel Débutant</div>
-                    </div>
-                </div>
-            </div>
-            <p style="color: #e5e5e5; text-align: center; margin-top: 2rem;">
-                Cliquez sur les éléments pour voir le contenu complet
             </p>
         </section>
     </div>
@@ -282,22 +272,273 @@
         <p>&copy; 2025 RC des Mines - Association de modélisme tout-terrain</p>
         <p>Tous droits réservés | Conception web par l'équipe RC des Mines</p>
         <div class="social-links">
-            <a href="https://www.helloasso.com" target="_blank" class="social-link hello-asso">
+            <a href="https://www.helloasso.com/associations/rc-des-mines/adhesions/adhesion-a-l-association-rc-des-mines" target="_blank" class="social-link hello-asso">
                 <i class="fas fa-heart"></i>
             </a>
             <a href="https://www.facebook.com" target="_blank" class="social-link facebook">
                 <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="https://www.instagram.com" target="_blank" class="social-link instagram">
+            <a href="https://www.instagram.com/rc_des_mines?igsh=MXVkcWtyNWhyNXFiNg==" target="_blank" class="social-link instagram">
                 <i class="fab fa-instagram"></i>
             </a>
             <a href="https://wa.me/33123456789" target="_blank" class="social-link whatsapp">
                 <i class="fab fa-whatsapp"></i>
             </a>
+            <a href="#" onclick="showLogin()" class="social-link admin">
+                <i class="fas fa-cog"></i>
+            </a>
         </div>
     </footer>
 
-    <script>
+     <!-- Login Modal -->
+    <div id="login-modal">
+        <div class="login-box">
+            <h3><i class="fas fa-lock"></i> Administration</h3>
+            <input type="password" id="admin-password" placeholder="Mot de passe administrateur" onkeypress="handleLoginKeyPress(event)">
+            <div class="admin-buttons">
+                <button class="admin-btn save" onclick="login()">Se connecter</button>
+                <button class="admin-btn reset" onclick="closeLogin()">Annuler</button>
+            </div>
+            <div id="login-error" style="color: #dc2626; margin-top: 1rem; font-size: 0.9rem;"></div>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="admin-panel">
+        <div class="admin-content">
+            <div class="admin-header">
+                <h2><i class="fas fa-cogs"></i> Panel Administrateur</h2>
+                <button class="close-admin" onclick="closeAdmin()">
+                    <i class="fas fa-times"></i> Fermer
+                </button>
+            </div>
+
+            <div class="admin-section">
+                <h3><i class="fas fa-images"></i> Gestion du Carrousel d'Accueil</h3>
+                <div class="slide-manager">
+                    <div class="slide-item">
+                        <label>Slide 1:</label>
+                        <select onchange="updateSlideType(0, this.value)">
+                            <option value="image">Image</option>
+                            <option value="video">Vidéo</option>
+                        </select>
+                        <input type="text" id="slide-0" placeholder="URL de l'image ou vidéo" onchange="updateSlidePreview(0)">
+                        <div class="slide-preview" id="preview-0"></div>
+                    </div>
+
+                    <div class="slide-item">
+                        <label>Slide 2:</label>
+                        <select onchange="updateSlideType(1, this.value)">
+                            <option value="image">Image</option>
+                            <option value="video">Vidéo</option>
+                        </select>
+                        <input type="text" id="slide-1" placeholder="URL de l'image ou vidéo" onchange="updateSlidePreview(1)">
+                        <div class="slide-preview" id="preview-1"></div>
+                    </div>
+
+                    <div class="slide-item">
+                        <label>Slide 3:</label>
+                        <select onchange="updateSlideType(2, this.value)">
+                            <option value="image">Image</option>
+                            <option value="video">Vidéo</option>
+                        </select>
+                        <input type="text" id="slide-2" placeholder="URL de l'image ou vidéo" onchange="updateSlidePreview(2)">
+                        <div class="slide-preview" id="preview-2"></div>
+                    </div>
+
+                    <div class="slide-item">
+                        <label>Slide 4:</label>
+                        <select onchange="updateSlideType(3, this.value)">
+                            <option value="image">Image</option>
+                            <option value="video">Vidéo</option>
+                        </select>
+                        <input type="text" id="slide-3" placeholder="URL de l'image ou vidéo" onchange="updateSlidePreview(3)">
+                        <div class="slide-preview" id="preview-3"></div>
+                    </div>
+
+                    <div class="slide-item">
+                        <label>Slide 5:</label>
+                        <select onchange="updateSlideType(4, this.value)">
+                            <option value="image">Image</option>
+                            <option value="video">Vidéo</option>
+                        </select>
+                        <input type="text" id="slide-4" placeholder="URL de l'image ou vidéo" onchange="updateSlidePreview(4)">
+                        <div class="slide-preview" id="preview-4"></div>
+                    </div>
+                </div>
+
+                <div class="admin-buttons">
+                    <button class="admin-btn save" onclick="saveSlides()">
+                        <i class="fas fa-save"></i> Sauvegarder les modifications
+                    </button>
+                    <button class="admin-btn reset" onclick="resetSlides()">
+                        <i class="fas fa-undo"></i> Restaurer par défaut
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+        // Configuration admin
+        const ADMIN_PASSWORD = "rcmines2024"; // Changez ce mot de passe !
+        let slideTypes = ['image', 'image', 'image', 'video', 'image'];
+        let slideUrls = [
+            'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+            'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+            'https://images.unsplash.com/photo-1571068316344-75bc76f77890?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+            'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+            'https://images.unsplash.com/photo-1558017488-06bf9f82613e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'
+        ];
+
+        // Login functions
+        function showLogin() {
+            document.getElementById('login-modal').style.display = 'flex';
+            document.getElementById('admin-password').focus();
+        }
+
+        function closeLogin() {
+            document.getElementById('login-modal').style.display = 'none';
+            document.getElementById('admin-password').value = '';
+            document.getElementById('login-error').textContent = '';
+        }
+
+        function handleLoginKeyPress(event) {
+            if (event.key === 'Enter') {
+                login();
+            }
+        }
+
+        function login() {
+            const password = document.getElementById('admin-password').value;
+            const errorDiv = document.getElementById('login-error');
+            
+            if (password === ADMIN_PASSWORD) {
+                closeLogin();
+                showAdminPanel();
+            } else {
+                errorDiv.textContent = 'Mot de passe incorrect !';
+                document.getElementById('admin-password').value = '';
+                setTimeout(() => {
+                    errorDiv.textContent = '';
+                }, 3000);
+            }
+        }
+
+        // Admin panel functions
+        function showAdminPanel() {
+            document.getElementById('admin-panel').style.display = 'block';
+            loadCurrentSlides();
+        }
+
+        function closeAdmin() {
+            document.getElementById('admin-panel').style.display = 'none';
+        }
+
+        function loadCurrentSlides() {
+            for (let i = 0; i < slideUrls.length; i++) {
+                document.getElementById(`slide-${i}`).value = slideUrls[i];
+                updateSlidePreview(i);
+            }
+        }
+
+        function updateSlideType(index, type) {
+            slideTypes[index] = type;
+            updateSlidePreview(index);
+        }
+
+        function updateSlidePreview(index) {
+            const url = document.getElementById(`slide-${index}`).value;
+            const preview = document.getElementById(`preview-${index}`);
+            
+            if (slideTypes[index] === 'image') {
+                preview.style.backgroundImage = `url(${url})`;
+                preview.innerHTML = '';
+            } else {
+                preview.style.backgroundImage = 'none';
+                preview.innerHTML = `<video style="width:100%;height:100%;object-fit:cover;border-radius:8px;" muted><source src="${url}" type="video/mp4"></video>`;
+            }
+        }
+
+        function saveSlides() {
+            // Récupérer les nouvelles URLs
+            for (let i = 0; i < slideUrls.length; i++) {
+                slideUrls[i] = document.getElementById(`slide-${i}`).value;
+            }
+            
+            // Mettre à jour le carrousel
+            updateCarousel();
+            
+            alert('✅ Modifications sauvegardées avec succès !');
+        }
+
+        function resetSlides() {
+            if (confirm('⚠️ Êtes-vous sûr de vouloir restaurer les images par défaut ?')) {
+                slideUrls = [
+                    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+                    'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+                    'https://images.unsplash.com/photo-1571068316344-75bc76f77890?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+                    'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+                    'https://images.unsplash.com/photo-1558017488-06bf9f82613e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'
+                ];
+                slideTypes = ['image', 'image', 'image', 'video', 'image'];
+                
+                loadCurrentSlides();
+                updateCarousel();
+                
+                alert('✅ Images restaurées par défaut !');
+            }
+        }
+
+        function updateCarousel() {
+            const slides = document.querySelectorAll('.hero-slide');
+            
+            slides.forEach((slide, index) => {
+                if (slideTypes[index] === 'image') {
+                    slide.style.backgroundImage = `url(${slideUrls[index]})`;
+                    slide.innerHTML = '';
+                } else {
+                    slide.style.backgroundImage = 'none';
+                    slide.innerHTML = `<video autoplay muted loop style="width:100%;height:100%;object-fit:cover;"><source src="${slideUrls[index]}" type="video/mp4"></video>`;
+                }
+            });
+        }
+        // Slideshow functionality
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.slide-dot');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            // Masquer toutes les slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Afficher la slide courante
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+            showSlide(currentSlideIndex);
+        }
+
+        function changeSlide(direction) {
+            currentSlideIndex += direction;
+            if (currentSlideIndex >= totalSlides) currentSlideIndex = 0;
+            if (currentSlideIndex < 0) currentSlideIndex = totalSlides - 1;
+            showSlide(currentSlideIndex);
+        }
+
+        function currentSlide(index) {
+            currentSlideIndex = index - 1;
+            showSlide(currentSlideIndex);
+        }
+
+        // Auto-play slideshow
+        setInterval(nextSlide, 5000); // Change toutes les 5 secondes
+
         function showSection(sectionId) {
             // Masquer toutes les sections
             const sections = document.querySelectorAll('.section');
