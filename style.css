@@ -735,10 +735,10 @@
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* Aperçu des slides */
+/* Aperçu des slides - Version agrandie */
 .slide-preview {
     width: 100%;
-    height: 120px;
+    height: 400px; /* Taille fixe de 400px comme demandé */
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.1);
     background-size: cover;
@@ -752,6 +752,14 @@
     font-size: 0.9rem;
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease; /* Ajout d'une transition pour un effet fluide */
+}
+
+/* Effet hover pour une meilleure interaction */
+.slide-preview:hover {
+    border-color: #dc2626;
+    box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
+    transform: scale(1.02);
 }
 
 .slide-preview:empty:before {
@@ -760,6 +768,19 @@
     font-style: italic;
 }
 
+/* Pour les écrans plus grands, maintenir la taille de 400px */
+@media (min-width: 1200px) {
+    .slide-preview {
+        height: 400px; /* Maintenir 400px sur les grands écrans */
+    }
+}
+
+/* Responsive - sur mobile, garder une taille raisonnable */
+@media (max-width: 768px) {
+    .slide-preview {
+        height: 150px; /* Plus petit sur mobile pour éviter de prendre trop de place */
+    }
+}
 /* Boutons d'administration */
 .admin-buttons {
     display: flex;

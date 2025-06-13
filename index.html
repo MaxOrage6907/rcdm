@@ -78,7 +78,7 @@
                 <div class="card">
                     <i class="fas fa-users"></i>
                     <h3>Communauté</h3>
-                    <p>Rejoignez une communauté passionnée de pilotes RC de tous niveaux</p>
+                    <p>Rejoignez une communauté convivial passionnée de pilotes RC de tous niveaux</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-trophy"></i>
@@ -102,7 +102,7 @@
                 <div class="about-text">
                     <p>Fondée en 2024, l'association RC des Mines rassemble les passionnés de modélisme tout-terrain de la région. Notre club offre un environnement convivial pour tous les niveaux, du débutant au pilote expérimenté.</p>
                     
-                    <p>Notre circuit technique propose des défis variés : montées raides, descentes techniques, passages dans l'eau et obstacles naturels. Nous organisons régulièrement des compétitions amicales et des sessions de chronométrage pour mesurer vos progrès.</p>
+                    <p>Notre circuit technique à été retravaillé début 2025 pour améliorer l'expérience de conduite. Nous organisons régulièrement des compétitions amicales et des sessions de chronométrage pour mesurer vos progrès.</p>
                     
                     <p>L'esprit d'entraide et de partage anime notre communauté. Nos membres expérimentés sont toujours prêts à conseiller les nouveaux arrivants sur le choix du matériel, les réglages ou les techniques de pilotage.</p>
                 </div>
@@ -115,54 +115,20 @@
     <!-- Chronos -->
     <div id="chronos" class="section">
         <section>
-            <h2 class="section-title">Meilleurs Chronos</h2>
-            <div class="times-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Catégorie</th>
-                            <th>Pilote</th>
-                            <th>Temps</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Crawler 1/10</strong></td>
-                            <td>Jean Dupont</td>
-                            <td>2:45.32</td>
-                            <td>15/05/2024</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Trial 1/10</strong></td>
-                            <td>Marie Martin</td>
-                            <td>3:12.18</td>
-                            <td>22/04/2024</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Scale 1/8</strong></td>
-                            <td>Pierre Durand</td>
-                            <td>2:58.94</td>
-                            <td>08/06/2024</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Monster Truck</strong></td>
-                            <td>Lucas Bernard</td>
-                            <td>2:33.76</td>
-                            <td>01/06/2024</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Rock Bouncer</strong></td>
-                            <td>Sophie Moreau</td>
-                            <td>3:28.45</td>
-                            <td>18/05/2024</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p style="color: #e5e5e5; text-align: center; margin-top: 1rem;">
-                <i class="fas fa-info-circle"></i> Chronos mis à jour après chaque session officielle
-            </p>
+              <h2 class="section-title">🏁 Meilleurs Chronos</h2>
+  <div class="times-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Pilote</th>
+          <th>Catégorie</th>
+          <th>Temps</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody id="public-chrono-table"></tbody>
+    </table>
+  </div>
         </section>
     </div>
 
@@ -312,6 +278,27 @@
                     <i class="fas fa-times"></i> Fermer
                 </button>
             </div>
+            <div class="admin-info info-box">
+  <h3>📸 Comment ajouter une image au carrousel ?</h3>
+  <p>
+    Pour ajouter une image dans le carrousel de la page d'accueil :
+  </p>
+  <ul>
+    <li>1. Prépare ton image au format JPG ou PNG (ou MP4 pour les vidéos).</li>
+    <li>2. Rend toi sur le site :<a href="https://postimages.org" target="_blank">https://postimages.org</a> , clique sur ce bouton : <img src="choisir.png" alt="Capture d'écran d'import" style="max-width: 100%; border-radius: 10px; margin-top: 1rem;"></li>
+    <li>3. Copie le deuxième lien : <img src="lien.png" alt="Capture d'écran d'import" style="max-width: 100%; border-radius: 10px; margin-top: 1rem;"></li></li>
+    <li>4. Entre ce lien dans l'espace URL de la slide voulue.</li>
+  </ul>
+</div>
+<div class="admin-info info-box">
+  <h3>⏱️ Comment Modifier les chrono ?</h3>
+  <ul>
+    <li>1. se rendre sur ce lien :<a href="https://docs.google.com/spreadsheets/d/1hb3CGD-aK-7CFHfOTc5Hv6H_4R6-HSHYKonhKXvvSTQ/edit?gid=0#gid=0" target="_blank">Feuille Chrono</a></li>
+    <li>2. Modifie la feuille avec les chrono que tu veux</li>
+    <li>3. Recharge le site</li>
+    <li>4. Les info apparaisse</li>
+  </ul>
+</div>
 
             <div class="admin-section">
                 <h3><i class="fas fa-images"></i> Gestion du Carrousel d'Accueil</h3>
@@ -583,6 +570,55 @@
                 parallax.style.transform = `translateY(${speed}px)`;
             }
         });
+
+        const SHEET_API = "https://script.google.com/macros/s/AKfycbxfKZVzMWzlPlmG7K5sSs7inP0Vxo_dyHBZPwGL0LlpVwTl403gQbb0jZmGYJv4xuU/exec";
+
+  async function ajouterChrono() {
+    const nom = document.getElementById('chrono-nom').value.trim();
+    const cat = document.getElementById('chrono-categorie').value;
+    const temps = document.getElementById('chrono-temps').value.trim();
+    const date = document.getElementById('chrono-date').value;
+
+    if (!nom || !temps || !date) {
+      alert("Tous les champs sont obligatoires !");
+      return;
+    }
+
+    await fetch(SHEET_API, {
+      method: 'POST',
+      body: JSON.stringify({ nom, cat, temps, date }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    afficherChronos();
+  }
+
+  async function afficherChronos() {
+    const res = await fetch(SHEET_API);
+    const data = await res.json();
+
+    const tbody = document.getElementById('public-chrono-table');
+    tbody.innerHTML = '';
+
+    data.forEach(({ nom, categorie, temps, date }) => {
+  const dateObj = new Date(date);
+  const dateLisible = dateObj.toLocaleDateString('fr-FR', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
+  });
+
+  tbody.innerHTML += `<tr>
+    <td>${nom}</td>
+    <td>${categorie}</td>
+    <td>${temps}</td>
+    <td>${dateLisible}</td>
+  </tr>`;
+});
+
+  }
+
+  document.addEventListener('DOMContentLoaded', afficherChronos);
     </script>
 </body>
 </html>
